@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { ProfileAddComponent } from './profile-add/profile-add.component';
 import { ProfileGetComponent } from './profile-get/profile-get.component';
 import { ProfileEditComponent } from './profile-edit/profile-edit.component';
+import { ProfileService } from './core/profile.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ProfileEditComponent } from './profile-edit/profile-edit.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ ProfileService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

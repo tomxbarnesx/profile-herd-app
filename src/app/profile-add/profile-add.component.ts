@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { ProfileService } from '../core/profile.service';
+
 @Component({
   selector: 'app-profile-add',
   templateUrl: './profile-add.component.html',
@@ -10,7 +12,7 @@ export class ProfileAddComponent implements OnInit {
 
   angForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private ps: ProfileService) { 
     this.createForm();
   }
 
@@ -19,6 +21,10 @@ export class ProfileAddComponent implements OnInit {
       name: [ '', Validators.required ],
       age: [ '', Validators.required ],
     })
+  }
+
+  addProfile(name, age) {
+    this.ps.addProfile(name, age);
   }
 
   ngOnInit() {

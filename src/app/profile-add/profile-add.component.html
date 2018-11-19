@@ -23,8 +23,9 @@
       </div>
 
       <div class="form-group">
-        <button type="submit" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Create Profile</button>
+        <button (click)="addProfile(name.value, age.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Create Profile</button>
       </div>
+      
     </form>
   </div>
 </div>
