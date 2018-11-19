@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-add',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileAddComponent implements OnInit {
 
-  constructor() { }
+  angForm: FormGroup;
+
+  constructor(private fb: FormBuilder) { 
+    this.createForm();
+  }
+
+  createForm() {
+    this.angForm = this.fb.group({
+      name: [ '', Validators.required ],
+      age: [ '', Validators.required ],
+    })
+  }
 
   ngOnInit() {
   }
